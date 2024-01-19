@@ -58,8 +58,13 @@ def simulateDraw(successDraws,scrabbleBag,iterations):
             successCount += 1
     return successCount / iterations
 
-scrabbleBag = createScrabbleBag()
-scrabbleBag = removeTiles("TERWATT",scrabbleBag)
-print(simulateDraw(["GIGA", "NANO", "TERA", "MEGA", "KILO"],scrabbleBag,1000000))
+
+if __name__ == "__main__":
+    scrabbleBag = createScrabbleBag()
+    tilesPreviouslyDrawn = "HELLO" #use capital letters and ? for blanks
+    scrabbleBag = removeTiles(tilesPreviouslyDrawn,scrabbleBag)
+    probability = simulateDraw(["FINDING", "CHANCE", "ALL", "DRAW"],scrabbleBag,1000000)
+    print(probability)
+
 
 
